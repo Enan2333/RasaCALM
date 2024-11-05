@@ -1,0 +1,37 @@
+# recipe: default.v1
+# language: zh
+# pipeline:
+# - name: NLUCommandAdapter  # 添加这个适配器来处理槽位映射
+# - name: SingleStepLLMCommandGenerator
+#   llm:
+#     model_name: gpt-4
+
+# policies:
+# - name: FlowPolicy
+# #  - name: EnterpriseSearchPolicy
+# #  - name: RulePolicy
+
+
+recipe: default.v1
+language: zh
+pipeline:
+- name: SingleStepLLMCommandGenerator
+  llm:
+    model_name: gpt-4
+   # 新增 NLUCommandAdapter
+# - name: SingleStepLLMCommandGenerator
+#   llm:
+#     provider: ollama
+#     model: qwen:4b  
+#     api_base: "http://localhost:11434"  # Ollama API 地址
+
+policies:
+- name: FlowPolicy
+- name: EnterpriseSearchPolicy
+  vector_store:
+    type: "faiss"
+    source: "./docs"
+    document_loader:
+      type: "custom"
+      encoding: "UTF-8" 
+assistant_id: 20241008-225537-baked-time

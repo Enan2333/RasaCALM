@@ -1,0 +1,46 @@
+version: "3.1"
+slots:
+  contentName:
+    type: text
+    mappings:
+      - type: from_llm
+    influence_conversation: true
+
+  number:
+    type: float
+    mappings:
+      - type: from_llm
+    influence_conversation: true
+
+  service_available:
+    type: bool
+    influence_conversation: false
+
+  largeTypeName:
+    type: text
+    mappings:
+      - type: from_llm
+    influence_conversation: true
+
+  large_type_available:
+    type: bool
+    influence_conversation: false
+  
+responses:
+  utter_ask_contentName:
+    - text: "请告诉我您需要的服务名称。"
+
+  utter_ask_number:
+    - text: "请提供服务的数量。"
+
+  utter_ask_service:
+    - text: "请告诉我您需要的服务名称和类型"
+
+  utter_ask_largeTypeName:
+    - text: "请问您需要什么类型的服务？"
+
+  
+
+actions:
+  - action_check_service
+  - action_check_largeTypeName

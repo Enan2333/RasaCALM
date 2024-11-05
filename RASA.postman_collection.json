@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "e2350ee1-2ae5-4f3b-aed3-37def3a81dc2",
+		"name": "RASA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5454277",
+		"_collection_link": "https://planetary-trinity-107509.postman.co/workspace/My-Workspace~18202b63-80db-41cd-8dbf-7775a205fa82/collection/5454277-e2350ee1-2ae5-4f3b-aed3-37def3a81dc2?action=share&source=collection_link&creator=5454277"
+	},
+	"item": [
+		{
+			"name": "连续对话",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sender\": \"test_user3\",  // sender ID of the user sending the message\r\n  \"message\": \"我需要理发服务\", \r\n  \"metadata\": {\r\n        \"custom_data\": \"some_value\"\r\n      }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5011/webhooks/rest/webhook",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5011",
+					"path": [
+						"webhooks",
+						"rest",
+						"webhook"
+					]
+				},
+				"description": "更多文档：\n\n[https://blog.csdn.net/weixin_42486623/article/details/120740107](https://blog.csdn.net/weixin_42486623/article/details/120740107)\n\n<img src=\"https://content.pstmn.io/fc487604-235d-48db-a2bf-d66d6ab2cebe/aW1hZ2UucG5n\" alt=\"\" height=\"976\" width=\"1849\">"
+			},
+			"response": []
+		},
+		{
+			"name": "添加messages",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sender\": \"test_user\",  // sender ID of the user sending the message\r\n  \"message\": \"我需要陪诊这个医疗服务\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5011/webhooks/rest/webhook",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5011",
+					"path": [
+						"webhooks",
+						"rest",
+						"webhook"
+					]
+				},
+				"description": "更多文档：\n\n[https://blog.csdn.net/weixin_42486623/article/details/120740107](https://blog.csdn.net/weixin_42486623/article/details/120740107)"
+			},
+			"response": []
+		},
+		{
+			"name": "预测action",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sender\": \"test_user\",  // sender ID of the user sending the message\r\n  \"message\": \"我需要陪诊这个医疗服务\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5011/webhooks/rest/webhook",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5011",
+					"path": [
+						"webhooks",
+						"rest",
+						"webhook"
+					]
+				},
+				"description": "更多文档：\n\n[https://blog.csdn.net/weixin_42486623/article/details/120740107](https://blog.csdn.net/weixin_42486623/article/details/120740107)"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sender\": \"test_user\",  // sender ID of the user sending the message\r\n  \"message\": \"Hi there!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5011/webhooks/callback/webhook",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5011",
+					"path": [
+						"webhooks",
+						"callback",
+						"webhook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "nlu parse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"Hello, I am Rasa!\",\r\n\"message_id\": \"b2831e73-1407-4ba0-a861-0f30a42a2a5a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5011/model/parse",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5011",
+					"path": [
+						"model",
+						"parse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "event reset",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"text\": \"Hello, I am Rasa!\",\r\n\"message_id\": \"b2831e73-1407-4ba0-a861-0f30a42a2a5a\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5011/model/parse",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5011",
+					"path": [
+						"model",
+						"parse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "version",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get_domain",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get tracker",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "bo't_server",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "bot_stop",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "s_id",
+							"value": "12234421112",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{ip}}:8113/v1/query",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "8113",
+					"path": [
+						"v1",
+						"query"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

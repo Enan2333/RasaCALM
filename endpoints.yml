@@ -1,0 +1,36 @@
+# This file contains the different endpoints your bot can use.
+
+# Server which runs your custom actions.
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+# Tracker store which is used to store the conversations.
+# By default the conversations are stored in memory.
+
+# Uncomment if you are using Redis or MongoDB as tracker store.
+#tracker_store:
+#    type: redis
+#    url: localhost
+#    port: 6379
+#    db: 0
+#    password: ""
+#    use_ssl: false
+
+# Event broker configuration (optional)
+#event_broker:
+#  url: localhost
+#  username: username
+#  password: password
+#  queue: queue
+
+# Uncomment the following section if you're using NLG Rephrasing (for example with OpenAI models)
+#nlg:
+#  type: rephrase
+
+# Uncomment or remove the model server part if you're fetching models from a remote server
+#models:
+#  default:
+#    - name: openai
+#      api_key: "your_api_key"
+nlg:
+  type: rephrase

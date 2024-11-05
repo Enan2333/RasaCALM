@@ -1,0 +1,18 @@
+flows:
+  checkservice:
+    description: 检查用户输入信息中的数量(number)和服务名称(contentname),如采购用品,助浴卫生这些具体的工作
+    steps:
+      - collect: number
+        description: 指服务的个数,例如一、1
+      - collect: contentName
+        description: 收集用户的服务请求,服务请求有：中医问诊、中药敷贴、代办事项、代办代购、优生优育咨询、保健按摩、保洁、做饭、健康管家、其他、其他家政、减肥减重咨询、剪指/趾甲、助浴卫生、助餐起居、头部调理、安装维修、情感倾诉、慢病、慢病调治、慢病重疾病防御、打扫卫生、护理老人、检查身体、棋牌、洗发、洗衣、洗衣服、测试服务内容、测量血压、测量血糖、清洗疏通、物品整理、理发剃须、社区中医、老人心跳异常排查、聊天、聊天谈心、肩颈背专项调理、腰腿膝盖疼痛调理、远程问诊、采购用品、重病护理、阅读书报、陪护陪伴、陪诊就医。
+      - action: action_check_service
+
+  check_large_type:
+    description: 检查用户输入信息中的服务类型(largeTypeName)是否存在,注意服务类型与服务名称的区别,服务类型有精神慰藉服务,生活照料服务,家政服务等
+    steps:
+      - collect: largeTypeName
+        description: 收集用户的服务类型,有健康告警通知、健康管家、医疗保健服务、家政服务、慢病调治、慢病重疾病防御、生活照料服务、社区中医、精神慰藉服务。
+      - action: action_check_largeTypeName
+
+  
